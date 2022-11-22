@@ -9,7 +9,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -64,7 +63,7 @@ public class Controller implements Initializable {
     }
 
     private void drawChess () {
-        for (int i = 0; i < chessBoard.length; i++) {
+        for(int i = 0; i < chessBoard.length; i++) {
             for (int j = 0; j < chessBoard[0].length; j++) {
                 if (flag[i][j]) {
                     // This square has been drawing, ignore.
@@ -87,7 +86,7 @@ public class Controller implements Initializable {
         }
     }
 
-    private void drawCircle (int i, int j) {
+    private void drawCircle(int i, int j) {
         Circle circle = new Circle();
         base_square.getChildren().add(circle);
         circle.setCenterX(i * BOUND + BOUND / 2.0 + OFFSET);
@@ -98,7 +97,7 @@ public class Controller implements Initializable {
         flag[i][j] = true;
     }
 
-    private void drawLine (int i, int j) {
+    private void drawLine(int i, int j) {
         Line line_a = new Line();
         Line line_b = new Line();
         base_square.getChildren().add(line_a);
@@ -120,8 +119,8 @@ public class Controller implements Initializable {
         boolean endgame = false;
 
         for(int i=0;i<3;i++){
-            int count = 0 ;
-            for(int j=0;j<3;j++){
+            int count = 0;
+            for (int j=0;j<3;j++){
                 if(chessBoard[i][j]== PlayerNumber){
                     count++;
                 }
@@ -261,7 +260,7 @@ public class Controller implements Initializable {
             private int PlayerNumber;
 
 
-            public Player (Socket socket,int pn){
+            public Player(Socket socket,int pn){
                 this.socket=socket;
                 this.PlayerNumber=pn;
 
